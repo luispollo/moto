@@ -120,7 +120,7 @@ class Role(BaseModel):
         properties = cloudformation_json['Properties']
 
         role = iam_backend.create_role(
-            role_name=resource_name,
+            role_name=properties['RoleName'],
             assume_role_policy_document=properties['AssumeRolePolicyDocument'],
             path=properties['Path'],
         )
